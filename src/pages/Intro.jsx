@@ -1,5 +1,7 @@
+import { Title } from "../components/Title";
+
 const Intro = () => {
-  return <div>Introduction</div>;
+  return <Title>Intro</Title>;
 };
 
 export default Intro;

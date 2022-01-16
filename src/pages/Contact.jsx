@@ -1,5 +1,7 @@
+import { Title } from "../components/Title";
+
 const Contact = () => {
-  return <div>Contact</div>;
+  return <Title>Contact</Title>;
 };
 
 export default Contact;

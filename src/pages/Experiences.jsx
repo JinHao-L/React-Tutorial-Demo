@@ -1,5 +1,7 @@
+import { Title } from "../components/Title";
+
 const Experiences = () => {
-  return <div>Experiences</div>;
+  return <Title>Experiences</Title>;
 };
 
 export default Experiences;
