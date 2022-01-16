@@ -1,0 +1,25 @@
+.NavBar-Container {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  position: sticky;
+  top: 0px;
+  background-color: aliceblue;
+  z-index: 100;
+}
+
+.NavBar-Container a {
+  text-decoration: none;
+  color: black;
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.NavBar-Container a:hover {
+  color: white;
+  background-color: #555
+}

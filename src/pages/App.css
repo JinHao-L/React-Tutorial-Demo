@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+}
+.App-Container {
+  padding: 10px 5px;
+  background-color: #282c34;
+  min-height: calc(100vh - 6rem - 20px);
+  color: white
 }
 
 .App-logo {

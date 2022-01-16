@@ -1,65 +1,28 @@
-import { useState, useEffect } from "react";
-import logo from "../assets/logo.svg";
-import "./App.css";
+import { NavBar } from "../components/NavBar";
 import Contact from "./Contact";
 import Experiences from "./Experiences";
+import { Home } from "./Home";
 import Intro from "./Intro";
 import Project from "./Projects";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import { Footer } from "../components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [timer, setTimer] = useState(0);
-  const [isTiming, toggleIsTiming] = useState(false);
-
-  const onClick = () => {
-    setCount(count + 1);
-    setCount(count + 1);
-  };
-
-  useEffect(() => {
-    if (isTiming) {
-      console.log("Timer started");
-      const stopwatch = setInterval(() => {
-        console.log("timer add");
-        setTimer((prevTime) => prevTime + 1);
-      }, 1000);
-
-      return () => clearInterval(stopwatch);
-    } else {
-      console.log("Timer stopped");
-    }
-  }, [isTiming]);
-
-  useEffect(() => {
-    console.log("Stop counting");
-  }, [count]);
-
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <h2>Timer: {timer}</h2>
-        <button onClick={() => toggleIsTiming((prev) => !prev)}>
-          Start/Stop
-        </button>
-        <h2>Count: {count}</h2>
-        <button onClick={() => onClick()}>Click me</button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Intro />
-      <Experiences />
-      <Project />
-      <Contact />
+      <NavBar />
+      <div className="App-Container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<Intro />} />
+          <Route path="experience" element={<Experiences />} />
+          <Route path="project" element={<Project />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </div>
+      <Footer />
     </div>
   );
 }
